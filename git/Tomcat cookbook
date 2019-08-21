@@ -1,0 +1,12 @@
+bash 'install_something' do                                               
+  user 'root'                                                             
+  cwd '/opt'                                                              
+  code <<-EOH                                                             
+  wget https://www-us.apache.org/dist/tomcat/tomcat-7/v7.0.96/bin/apache-t
+omcat-7.0.96.zip                                                          
+ unzip apache-tomcat-7.0.96.zip                                           
+ cd apache-tomcat-7.0.96/bin                                              
+  mode 755 *.sh*                                                          
+  ./startup.sh                                                            
+  EOH                                                                     
+end
